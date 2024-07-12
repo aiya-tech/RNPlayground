@@ -1,4 +1,4 @@
-![logo](./ios/RNPlayground/Images.xcassets/AppIcon.appiconset/1024.png)
+![logo](./ios/RNPlayground/Images.xcassets/AppIcon.appiconset/180.png)
 
 # feature
 
