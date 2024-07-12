@@ -1,3 +1,5 @@
+![logo](./ios/RNPlayground/Images.xcassets/AppIcon.appiconset/1024.png)
+
 # feature
 
 - [x] 加入eslint
