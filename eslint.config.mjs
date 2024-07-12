@@ -23,6 +23,7 @@ export default [
       'prefer-const': 0, // 首选const
       indent: ['error', 2], // 缩进风格
       semi: ['error', 'never'], // 不带分号
+      '@typescript-eslint/semi': ['error', 'never'],
       'no-multi-spaces': 2, // 不能用多余的空格
       'no-trailing-spaces': 2, // 一行结束后面不要有空格
       'comma-dangle': [2, 'always-multiline'], // 多行模式必须带逗号，单行模式不能带逗号
@@ -45,6 +46,9 @@ export default [
           requireLast: false,
         },
       }],
+      '@typescript-eslint/no-explicit-any': 'off', // 允许使用any
+      // '@typescript-eslint/no-unused-vars': ['warn', {'argsIgnorePattern': '^_'}],
+      '@typescript-eslint/no-unused-vars': 'off', // 忽略未使用的变量
     },
   },
 ]
