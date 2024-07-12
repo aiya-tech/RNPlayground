@@ -31,4 +31,6 @@
   - babel-plugin-module-resolver
   - react-native-dotenv
 
- 
+ ## 0.0.4
+
+- 新增logo
