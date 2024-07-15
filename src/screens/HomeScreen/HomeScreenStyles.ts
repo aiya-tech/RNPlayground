@@ -9,26 +9,26 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   itemContainer: {
-    flexDirection: 'row',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    flex: 1,
+    margin: 5,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    overflow: 'hidden',
+    elevation: 3,
   },
   image: {
-    width: 100,
-    height: 100,
-    marginRight: 16,
+    width: '100%',
+    height: 150,
   },
-  textContainer: {
-    flex: 1,
+  breedInfo: {
+    padding: 10,
   },
-  title: {
-    fontSize: 18,
+  breedName: {
     fontWeight: 'bold',
-    color: '#fff',
+    fontSize: 16,
   },
-  description: {
+  breedDetails: {
     fontSize: 14,
-    color: '#fff',
+    color: '#666',
   },
 })

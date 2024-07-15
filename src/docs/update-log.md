@@ -33,3 +33,4 @@
   - react-native-gesture-handler
   - react-native-screens
   - react-native-webview
+  - recyclerlistview
