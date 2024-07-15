@@ -6,9 +6,10 @@
 # feature
 
 - [x] 加入eslint
-- [ ] 引入常用库
+- [x] 引入常用库
+- [x] 网络层
+- [x] 瀑布流demo
 - [ ] 常用hook使用
-- [ ] 网络层
 - [ ] TurboModules使用
 - [ ] 测试
 

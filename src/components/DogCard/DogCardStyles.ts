@@ -7,8 +7,6 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 8,
     overflow: 'hidden',
-    borderColor: '#ddd',
-    borderWidth: 1,
   },
   image: {
     width: '100%',

@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import {View} from 'react-native'
+import React, {useEffect, useRef} from 'react'
+import {LayoutAnimation, View} from 'react-native'
 import {styles} from './HomeScreenStyles'
 import useDogData from '~/hooks/useDogData'
 import {mockDogs} from '~/hooks/mock'
@@ -9,7 +9,15 @@ import DogCard from '~/components/DogCard'
 
 const HomeScreen: React.FC = () => {
 
-  const {dogs, loading, error, fetchDogData, refreshing, refreshDogData} = useDogData()
+  const {
+    dogs,
+    loading,
+    error,
+    fetchDogData,
+    refreshing,
+    refreshDogData,
+  } = useDogData()
+  const listRef = useRef<any>()
 
   useEffect(() => {
     fetchDogData()
@@ -19,6 +27,7 @@ const HomeScreen: React.FC = () => {
     <View style={styles.container}>
       <TabHeader title='首页'></TabHeader>
       <MasonryFlashList
+        ref={listRef}
         data={mockDogs}
         renderItem={({item}) => <DogCard item={item} />}
         keyExtractor={(item) => item.id}

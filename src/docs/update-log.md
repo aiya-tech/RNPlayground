@@ -34,3 +34,4 @@
   - react-native-screens
   - react-native-webview
   - @shopify/flash-list
+  - react-native-fast-image

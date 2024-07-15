@@ -5,19 +5,23 @@ import {BottomTabNavigationOptions, createBottomTabNavigator} from '@react-navig
 import {RouteProp} from '@react-navigation/native'
 import HomeScreen from '../HomeScreen'
 import MeScreen from '../MeScreen'
+import FunctionScreen from '../FunctionScreen'
 
 const Tab = createBottomTabNavigator()
 
 const names = {
   Home: '首页',
+  Function: '功能',
   Me: '我的',
 } as Record<string, string>
 
 const images: Record<string, any> = {
-  Home: require('~/assets/images/home.png'),
-  'Home-fill': require('~/assets/images/home-fill.png'),
-  Me: require('~/assets/images/me.png'),
-  'Me-fill': require('~/assets/images/me-fill.png'),
+  Home: require('~/assets/images/tabbar/home.png'),
+  'Home-fill': require('~/assets/images/tabbar/home-fill.png'),
+  Me: require('~/assets/images/tabbar/me.png'),
+  'Me-fill': require('~/assets/images/tabbar/me-fill.png'),
+  Function: require('~/assets/images/tabbar/function.png'),
+  'Function-fill': require('~/assets/images/tabbar/function-fill.png'),
 }
 
 const TabScreen: React.FC = () => {
@@ -63,6 +67,7 @@ const TabScreen: React.FC = () => {
       backBehavior="initialRoute"
     >
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Function" component={FunctionScreen} />
       <Tab.Screen name="Me" component={MeScreen} />
     </Tab.Navigator>
   )

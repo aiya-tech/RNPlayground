@@ -13,9 +13,9 @@ const useDogData = () => {
   const fetchDogData = async (reset: boolean = false) => {
     return getImages(page)
       .then(res => {
-        const data = res.data
-        // setDogs(prevDogs => (reset ? data : [...prevDogs, ...data]))
-        setDogs(mockDogs as Dog[])
+        // const data = res.data
+        const data = mockDogs as Dog[]
+        setDogs(prevDogs => (reset ? data : [...prevDogs, ...data]))
         setLoading(false)
         if (reset) {
           setRefreshing(false)
