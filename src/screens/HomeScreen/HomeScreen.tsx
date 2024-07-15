@@ -1,13 +1,11 @@
 import React, {useEffect} from 'react'
-import {ActivityIndicator, FlatList, Image, RefreshControl, Text, View} from 'react-native'
+import {View} from 'react-native'
 import {styles} from './HomeScreenStyles'
 import useDogData from '~/hooks/useDogData'
-import {Dog} from '~/models/dogs'
 import {mockDogs} from '~/hooks/mock'
-import {screen} from '~/theme'
 import TabHeader from '~/components/TabHeader'
-
-let array: Dog[] = []
+import {MasonryFlashList} from '@shopify/flash-list'
+import DogCard from '~/components/DogCard'
 
 const HomeScreen: React.FC = () => {
 
@@ -20,6 +18,13 @@ const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <TabHeader title='首页'></TabHeader>
+      <MasonryFlashList
+        data={mockDogs}
+        renderItem={({item}) => <DogCard item={item} />}
+        keyExtractor={(item) => item.id}
+        numColumns={2}
+        estimatedItemSize={300}
+      />
     </View>
   )
 }
