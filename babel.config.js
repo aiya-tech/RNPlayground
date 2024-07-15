@@ -18,6 +18,7 @@ module.exports = {
         root: ['./src'],
         alias: {
           '~': './src',
+          '@images': './src/assets/images',
         },
       },
     ],
