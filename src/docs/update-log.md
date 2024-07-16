@@ -35,3 +35,4 @@
   - react-native-webview
   - @shopify/flash-list
   - react-native-fast-image
+- 新增header组件
