@@ -18,9 +18,14 @@ module.exports = {
         root: ['./src'],
         alias: {
           '~': './src',
+          '@images': './src/assets/images',
         },
       },
     ],
+    // [
+    //   'transform-remove-console',
+    //   {'exclude': ['error', 'warn']},
+    // ],
   ],
   overrides: [{
     plugins: [

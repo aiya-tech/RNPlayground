@@ -49,6 +49,7 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off', // 允许使用any
       // '@typescript-eslint/no-unused-vars': ['warn', {'argsIgnorePattern': '^_'}],
       '@typescript-eslint/no-unused-vars': 'off', // 忽略未使用的变量
+      '@typescript-eslint/ban-types': 'off',
     },
   },
 ]

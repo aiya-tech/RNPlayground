@@ -25,7 +25,8 @@ instance.interceptors.request.use(function (config) {
 const http = {
   get: async <T = any>(url: string, params = {}, headers = {}) => {
     return instance.get(url, {params, headers}).then(res => {
-      return res.data as {data: T; [k: string]: any}
+      // return res.data as {data: T; [k: string]: any}
+      return {data: res.data}
     })
   },
   post: async <T = any>(url: string, data = {}, headers = {}) => {
