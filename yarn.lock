@@ -3182,6 +3182,7 @@ __metadata:
     react-native-screens: ^3.32.0
     react-native-webview: ^13.10.5
     react-test-renderer: 18.2.0
+    rtn-calculator: ./RTNCalculator
     typescript: 5.0.4
     typescript-eslint: ^7.16.0
   languageName: unknown
@@ -9200,6 +9201,16 @@ __metadata:
   bin:
     rimraf: ./bin.js
   checksum: 3ea587b981a19016297edb96d1ffe48af7e6af69660e3b371dbfc73722a73a0b0e9be5c88089fbeeb866c389c1098e07f64929c7414290504b855f54f901ab10
+  languageName: node
+  linkType: hard
+
+"rtn-calculator@file:./RTNCalculator::locator=RNPlayground%40workspace%3A.":
+  version: 0.0.1
+  resolution: "rtn-calculator@file:./RTNCalculator#./RTNCalculator::hash=6b7fb7&locator=RNPlayground%40workspace%3A."
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 8054532009f73d01666338a5c82163a7d5b38041e46577920db44790f48fa748d73df5d7ce5ea358122ed0d678dfabaad2ded88a7f79c35bd7fb1f35951ccf7f
   languageName: node
   linkType: hard
 

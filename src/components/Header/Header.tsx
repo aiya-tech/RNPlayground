@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({title}) => {
 
   return (
     <View style={[styles.container, {paddingTop: insets.top, height: styles.container.height + insets.top}]}>
-      <TouchableOpacity onPress={handleGoBack}>
+      <TouchableOpacity onPress={handleGoBack} style={styles.back}>
         <Image source={require('~/assets/images/common/back.png')}></Image>
       </TouchableOpacity>
       <Text style={styles.title}>{title}</Text>
