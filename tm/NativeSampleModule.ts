@@ -7,9 +7,9 @@ import {TurboModuleRegistry} from 'react-native'
 
 // 此接口必须命名为 Spec
 export interface Spec extends TurboModule {
-  add(a: number, b: number): Promise<number>
+  readonly reverseString: (input: string) => string
 }
 
 export default TurboModuleRegistry.get<Spec>(
-  'RTNCalculator',
+  'NativeSampleModule',
 ) as Spec | null

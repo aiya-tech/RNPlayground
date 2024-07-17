@@ -2,14 +2,14 @@ import React, {useState} from 'react'
 import {Button, Text, View} from 'react-native'
 import {styles} from './TurboModulesScreenStyles'
 import Header from '~/components/Header'
-import RTNCalculator from 'rtn-calculator/js/NativeCalculator.ts'
+import NativeSampleModule from '../../../tm/NativeSampleModule'
 
 const TurboModulesScreen: React.FC = () => {
 
-  const [result, setResult] = useState<number>()
+  const [result, setResult] = useState<string>()
 
   const handleAdd = async () => {
-    const value = await RTNCalculator?.add(3, 7)
+    const value = await NativeSampleModule?.reverseString('the quick brown fox jumps over the lazy dog')
     setResult(value)
   }
 
@@ -17,10 +17,10 @@ const TurboModulesScreen: React.FC = () => {
     <View style={styles.container}>
       <Header title='🚀 TurboModules 使用'></Header>
       <Text style={{marginLeft: 20, marginTop: 20}}>
-        3+7={result ?? '??'}
+        {result ?? ''}
       </Text>
       <Button
-        title="Compute"
+        title="Reverse String"
         onPress={handleAdd}
       />
     </View>

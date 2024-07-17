@@ -1,5 +1,9 @@
 {
   "name": "RNPlayground",
+  "author": "xurong xurong@xurong.tech (https://github.com/xiongxiongjiang)",
+  "license": "MIT",
+  "homepage": "https://github.com/xiongxiongjiang/rtn-calculator#readme",
+  "description": "A react native playground",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -24,8 +28,7 @@
     "react-native-markdown-display": "^7.0.2",
     "react-native-safe-area-context": "^4.10.8",
     "react-native-screens": "^3.32.0",
-    "react-native-webview": "^13.10.5",
-    "rtn-calculator": "./RTNCalculator"
+    "react-native-webview": "^13.10.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -33,7 +36,7 @@
     "@babel/runtime": "^7.20.0",
     "@eslint/compat": "^1.1.0",
     "@eslint/js": "^9.6.0",
-    "@react-native/babel-preset": "0.74.85",
+    "@react-native/babel-preset": "^0.74.85",
     "@react-native/eslint-config": "0.74.85",
     "@react-native/metro-config": "0.74.85",
     "@react-native/typescript-config": "0.74.85",
@@ -59,5 +62,13 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@3.6.4",
+  "codegenConfig": {
+    "name": "AppSpecs",
+    "type": "all",
+    "jsSrcsDir": "tm",
+    "android": {
+      "javaPackageName": "tech.xurong.rn"
+    }
+  }
 }
