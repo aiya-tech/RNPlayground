@@ -22,6 +22,10 @@ target 'RNPlayground' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+  
+  if ENV['RCT_NEW_ARCH_ENABLED'] == '1'
+    pod 'AppTurboModules', :path => "../tm"
+  end
 
   target 'RNPlaygroundTests' do
     inherit! :complete

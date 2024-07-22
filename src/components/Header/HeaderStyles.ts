@@ -18,5 +18,10 @@ export const styles = StyleSheet.create({
     color: theme.primary,
     fontWeight: '500',
   },
+  back: {
+    width: 44,
+    height: 44,
+    justifyContent: 'center',
+  },
 })
 

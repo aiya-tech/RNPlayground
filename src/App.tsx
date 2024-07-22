@@ -1,17 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React, {PropsWithChildren, useEffect} from 'react'
-import {SafeAreaView} from 'react-native-safe-area-context'
-import {NavigationContainer} from '@react-navigation/native'
+import React, {useCallback, useEffect, useState} from 'react'
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
+import {NavigationContainer, NavigationState} from '@react-navigation/native'
 import TabScreen from './screens/TabScreen'
-import {createStackNavigator, StackNavigationOptions} from '@react-navigation/stack'
+import {CardStyleInterpolators, createStackNavigator, StackNavigationOptions} from '@react-navigation/stack'
 import {theme} from './theme'
-import {NativeModules} from 'react-native'
+import {NativeModules, Platform, StatusBar} from 'react-native'
 import TurboModulesScreen from './screens/TurboModulesScreen'
 import HooksScreen from './screens/HooksScreen'
 
@@ -32,22 +25,52 @@ const commonOptions: {options: StackNavigationOptions} = {
   },
 }
 
+export const LightContentRouteName = ['Home', 'Function', 'Me']
+
 function App(): React.JSX.Element {
 
-  useEffect(() => {
-    NativeModules.DevSettings.setIsDebuggingRemotely(false)
+  const [currentRouteName, setCurrentRouteName] = useState('Home')
+
+  // useEffect(() => {
+  //   NativeModules.DevSettings.setIsDebuggingRemotely(false)
+  // }, [])
+
+  const handleNavigationChange = useCallback((state?: NavigationState) => {
+    if (!state) return
+    const {index, routes} = state
+    if (routes[index].state) {
+      handleNavigationChange(routes[index].state as any)
+      return
+    }
+    const currentRoute = routes[index]
+    if (currentRoute) {
+      setCurrentRouteName(currentRoute.name)
+    }
   }, [])
 
   return (
-    <SafeAreaView edges={['top']} style={{flex: 1, backgroundColor: theme.primary}}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName={'Tab'}>
-          <Stack.Screen name='Tab' component={TabScreen} options={{header: () => null}} />
-          <Stack.Screen name='TurboModules' component={TurboModulesScreen} options={{header: () => null}} />
-          <Stack.Screen name='Hooks' component={HooksScreen} options={{header: () => null}} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView edges={[]} style={{flex: 1, backgroundColor: theme.primary}}>
+        <StatusBar
+          barStyle={LightContentRouteName.includes(currentRouteName) ? 'light-content' : 'dark-content'}
+          backgroundColor="transparent"
+          translucent
+        />
+        <NavigationContainer onStateChange={handleNavigationChange}>
+          <Stack.Navigator
+            initialRouteName={'Tab'}
+            screenOptions={{
+              cardStyleInterpolator: Platform.OS === 'android' ? CardStyleInterpolators.forHorizontalIOS : undefined,
+            }}
+          >
+            <Stack.Screen name='Tab' component={TabScreen} options={{header: () => null}} />
+            <Stack.Screen name='TurboModules' component={TurboModulesScreen} {...commonOptions}/>
+            <Stack.Screen name='Hooks' component={HooksScreen} {...commonOptions}/>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaView>
+    </SafeAreaProvider>
+
   )
 }
 
