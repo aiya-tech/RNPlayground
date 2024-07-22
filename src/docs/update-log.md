@@ -36,3 +36,7 @@
   - @shopify/flash-list
   - react-native-fast-image
 - 新增header组件
+
+## 0.0.6
+
+- TurboModule使用
