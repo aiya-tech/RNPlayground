@@ -32,10 +32,6 @@ const useDogData = () => {
       })
   }
 
-  // useEffect(() => {
-  //   fetchDogData()
-  // }, [])
-
   const refreshDogData = () => {
     setRefreshing(true)
     fetchDogData(true)

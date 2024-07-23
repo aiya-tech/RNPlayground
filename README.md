@@ -9,9 +9,9 @@
 - [x] 引入常用库
 - [x] 网络层
 - [x] 瀑布流demo
+- [x] TurboModules使用
+- [x] 测试用例
 - [ ] 常用hook使用
-- [ ] TurboModules使用
-- [ ] 测试
 
 
 
