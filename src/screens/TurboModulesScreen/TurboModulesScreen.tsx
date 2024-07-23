@@ -16,10 +16,11 @@ const TurboModulesScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Header title='🚀 TurboModules 使用'></Header>
-      <Text style={{marginLeft: 20, marginTop: 20}}>
+      <Text style={{marginLeft: 20, marginTop: 20}} testID='1'>
         {result ?? ''}
       </Text>
       <Button
+        testID='2'
         title="Reverse String"
         onPress={handleAdd}
       />
