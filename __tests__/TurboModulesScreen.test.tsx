@@ -1,23 +1,9 @@
 
 import {it} from '@jest/globals'
-import {NavigationContainer} from '@react-navigation/native'
-import React, {PropsWithChildren} from 'react'
-import {SafeAreaProvider} from 'react-native-safe-area-context'
+import React from 'react'
 import TurboModulesScreen from '~/screens/TurboModulesScreen'
 import {render, fireEvent, waitFor} from '@testing-library/react-native'
-
-const inset = {
-  frame: {x: 0, y: 0, width: 0, height: 0},
-  insets: {top: 0, left: 0, right: 0, bottom: 0},
-}
-
-const TestWrapper: React.FC<PropsWithChildren> = ({children}) => {
-  return (
-    <SafeAreaProvider initialMetrics={inset}>
-      <NavigationContainer>{children}</NavigationContainer>
-    </SafeAreaProvider>
-  )
-}
+import TestWrapper from '~/components/TestWrapper'
 
 jest.mock('../tm/NativeSampleModule', () => ({
   reverseString: jest.fn().mockResolvedValue('god yzal eht revo spmuj xof nworb kciuq eht'),
